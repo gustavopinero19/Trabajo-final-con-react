@@ -1,111 +1,58 @@
-# Proyecto Final React UTN - Front-End: **Cocinando tu Receta**
+# Cocinando tu Receta - Proyecto Final React 
 
-Este es el proyecto final del curso de Programación Web Full Stack en la UTN. La aplicación **Cocinando tu Receta** permite a los usuarios crear recetas personalizadas, seleccionando ingredientes de una lista, ajustando las cantidades y obteniendo un "puntaje nutricional" en tiempo real basado en los ingredientes elegidos.
+**Cocinando tu Receta** es una aplicación interactiva desarrollada con React, que permite a los usuarios crear recetas personalizadas seleccionando ingredientes, ajustando las cantidades y obteniendo un puntaje nutricional en tiempo real. Además, los usuarios pueden guardar y consultar sus recetas en el historial.
 
 ## Descripción
 
-**Cocinando tu Receta** es una aplicación que permite a los usuarios crear recetas personalizadas, gestionar ingredientes seleccionados y obtener un puntaje nutricional en tiempo real. Los usuarios pueden ver un historial de recetas guardadas en localStorage y ajustar los ingredientes seleccionados según sus preferencias.
+La aplicación permite a los usuarios armar recetas personalizadas seleccionando ingredientes de una lista interactiva, ajustando sus cantidades y visualizando un puntaje nutricional calculado dinámicamente. Las recetas creadas se guardan en el historial, utilizando `localStorage` para mantenerlas disponibles entre sesiones.
 
-## Características Clave
+## Características
 
 - **Página Principal:**
-  - Introducción con un botón para "Crear receta".
+  - Introducción al proyecto y botón para iniciar la creación de una receta.
   
-- **Panel de Creación:**
-  - Lista interactiva de ingredientes con categorías (proteínas, carbohidratos, vegetales, etc.).
-  - Panel para arrastrar y soltar ingredientes.
+- **Panel de Creación de Recetas:**
+  - Lista interactiva de ingredientes organizados en categorías (proteínas, carbohidratos, vegetales, etc.).
+  - Panel de arrastrar y soltar ingredientes para formar la receta.
   - Campo para nombrar la receta.
-  - Puntaje nutricional calculado dinámicamente usando `useEffect` y `useState`.
+  - Puntaje nutricional calculado en tiempo real.
+
+- **Historial de Recetas:**
+  - Guarda las recetas creadas en `localStorage` y las muestra en una lista.
+  - Permite eliminar o ver detalles de cada receta.
+
+## Tecnologías Utilizadas
+
+- **React:** Framework para construir la interfaz de usuario.
+- **JavaScript (ES6+):** Lenguaje de programación principal.
+- **CSS:** Estilos personalizados para la aplicación.
+- **localStorage:** Para persistir las recetas entre sesiones.
+
+## Estructura de la Aplicación
+
+La navegación entre las diferentes vistas (Home, Crear Receta, Historial de Recetas) se maneja mediante el estado local del componente raíz (`App.jsx`), sin utilizar React Router.
+
+### Componentes Principales:
+
+- **App.jsx:** Componente raíz que maneja el estado global de la aplicación (vista actual, recetas guardadas).
+- **Home.jsx:** Componente de la página principal, con la introducción y un botón para ir a la creación de recetas.
+- **CreateRecipe.jsx:** Componente principal para la creación de recetas, que incluye:
+  - **IngredientList.jsx:** Lista de ingredientes disponibles.
+  - **RecipeBuilder.jsx:** Panel donde se pueden ajustar las cantidades de los ingredientes seleccionados.
+  - **RecipeSummary.jsx:** Muestra el puntaje nutricional de la receta.
+- **RecipeHistory.jsx:** Componente para mostrar el historial de recetas guardadas.
+  - **RecipeCard.jsx:** Tarjetas individuales con la información de cada receta guardada.
+
+## Funcionalidades
+
+- **Página Principal (Home.jsx):** 
+  - Muestra la introducción al proyecto y un botón para acceder a la creación de recetas.
   
-- **Historial de Recetas:**
-  - Permite guardar las recetas creadas en `localStorage` y ver una lista de ellas.
+- **Crear Receta (CreateRecipe.jsx):**
+  - Permite al usuario seleccionar ingredientes de una lista interactiva.
+  - Los ingredientes seleccionados pueden arrastrarse al panel para ajustarse y cambiar sus cantidades.
+  - El puntaje nutricional se calcula dinámicamente y se muestra al usuario en tiempo real.
 
-## Estructura de la Aplicación (Sin React Router)
-
-La navegación se maneja mediante estados locales en el componente principal (`App.jsx`), sin usar React Router.
-
-### Diagrama Jerárquico Simplificado
-
-1. **App.jsx (Componente raíz):**
-   - Maneja los estados de la vista actual (`home`, `create-recipe`, `recipe-history`).
-   - Renderiza la vista correspondiente según el estado.
-   - Administra la lista global de recetas guardadas.
-
-2. **Componentes hijos:**
-   - **Home.jsx:** Introducción y navegación a "Crear Receta".
-   - **CreateRecipe.jsx:**
-     - **IngredientList.jsx:** Lista interactiva de ingredientes disponibles.
-     - **RecipeBuilder.jsx:** Panel para ajustar ingredientes seleccionados.
-     - **RecipeSummary.jsx:** Muestra el puntaje nutricional y el resumen de la receta.
-   - **RecipeHistory.jsx:** Muestra las recetas guardadas.
-     - **RecipeCard.jsx:** Tarjeta individual para cada receta.
-
-## Funcionalidades y Estados
-
-### Estados (useState)
-
-- **Vista actual:** `home`, `create-recipe`, `recipe-history`.
-- **Crear Receta:**
-  - Lista de ingredientes seleccionados.
-  - Cantidades ajustadas de los ingredientes.
-  - Nombre de la receta.
-  - Puntaje nutricional calculado.
-- **Historial de Recetas:**
-  - Lista de recetas guardadas.
-
-### Efectos (useEffect)
-
-- **Actualizar puntaje nutricional:** Se calcula dinámicamente cuando cambian los ingredientes seleccionados o sus cantidades.
-- **Guardar y cargar recetas:** Las recetas se guardan en `localStorage` y se cargan al reiniciar la aplicación.
-
-## Funcionalidad de Cada Sección
-
-1. **Página Principal (Home.jsx):**
-   - Introducción breve de la aplicación.
-   - Botón para iniciar el proceso de creación de recetas.
-   - Cambia el estado de la vista a "create-recipe" al hacer clic.
-
-2. **Crear Receta (CreateRecipe.jsx):**
-   - Permite seleccionar ingredientes y ajustar las cantidades.
-   - Muestra el puntaje nutricional en tiempo real.
-   - Guarda la receta en `localStorage`.
-   - Componentes secundarios:
-     - **IngredientList.jsx:** Lista interactiva de ingredientes clasificados.
-     - **RecipeBuilder.jsx:** Panel para ajustar ingredientes seleccionados.
-     - **RecipeSummary.jsx:** Muestra el puntaje nutricional.
-
-3. **Historial de Recetas (RecipeHistory.jsx):**
-   - Muestra las recetas guardadas.
-   - Permite eliminar recetas o ver sus detalles.
-   - Componentes secundarios:
-     - **RecipeCard.jsx:** Muestra los detalles de cada receta y permite acciones como eliminar.
-
-## Personalización y Estilo
-
-- **API de Ingredientes:** Se puede integrar una API de ingredientes, como Edamam, para enriquecer la experiencia con datos reales.
-- **Estilo:** El proyecto utiliza **CSS** o **Tailwind CSS** para la personalización visual.
-
-## Flujo de Datos y Uso de Estados
-
-1. **Estado Principal (App.jsx):**
-   - Maneja la vista actual (Home, Crear Receta, Historial).
-   - Administra las recetas guardadas.
-
-2. **Estados Específicos (CreateRecipe.jsx):**
-   - Ingredientes seleccionados, cantidades ajustadas, y puntaje nutricional.
-
-3. **Comunicación entre Componentes:**
-   - Uso de **props** para pasar datos de padres a hijos.
-   - Eventos para actualizar estados en el componente padre.
-
-2. **Despliegue en Vercel:**
-   - Deployar la aplicación en Vercel y enviar el link.
-
-3. **Estructura y Funcionalidad:**
-   - Evaluación de componentes, uso de props, hooks (`useState`, `useEffect`), y manejo de estados globales.
-   - La funcionalidad debe cumplir con las especificaciones.
-
-
-
-
-
+- **Historial de Recetas (RecipeHistory.jsx):**
+  - Muestra todas las recetas guardadas en el `localStorage`.
+  - Permite eliminar o ver los detalles de cada receta.
