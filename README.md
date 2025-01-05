@@ -105,43 +105,6 @@ La navegación se maneja mediante estados locales en el componente principal (`A
    - Evaluación de componentes, uso de props, hooks (`useState`, `useEffect`), y manejo de estados globales.
    - La funcionalidad debe cumplir con las especificaciones.
 
-## Instalación
-
-Para instalar y ejecutar este proyecto en tu entorno local, sigue estos pasos:
-
-1. Clona este repositorio:
-   ```bash
-   git clone <URL-del-repositorio>
-Navega a la carpeta del proyecto:
-
-bash
-Copiar código
-cd trabajo-final-react
-Instala las dependencias:
-
-bash
-Copiar código
-npm install
-Inicia el servidor de desarrollo:
-
-bash
-Copiar código
-npm start
-Esto abrirá la aplicación en tu navegador predeterminado, generalmente en http://localhost:3000.
-
-Contribuciones
-Si deseas contribuir a este proyecto, siéntete libre de hacer un fork, crear un branch y enviar un pull request.
-
-Licencia
-Este proyecto está bajo la Licencia ISC. Para más detalles, revisa el archivo LICENSE.
-
-perl
-Copiar código
-
-Este `README.md` cubre todas las funcionalidades y requisitos mencionados en las consignas del proyecto. Puedes personalizar el contenido según lo que necesites, como el enlace de tu repositorio o detalles adicionales sobre la implementación. 
-
-Si necesitas algún ajuste o algo más, no dudes en decírmelo. ¡Buena suerte con la entrega de tu proyecto!
-
 
 
 
