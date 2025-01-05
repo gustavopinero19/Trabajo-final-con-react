@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrar Habitos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <span class="logo-icon">:)</span>
+            <span class="logo-text">Gestionando tus Habitos</span>
+        </div>
+        <nav class="main-nav">
+            <a href="#" onclick="navigateTo('home')">Inicio</a>
+            <a href="#" onclick="navigateTo('create-recipe')">Crear Habitos</a>
+            <a href="#" onclick="navigateTo('recipe-history')">Historial de Recetas</a>
+        </nav>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar recetas...">
+            <button class="search-btn">&#128269;</button>
+        </div>
+    </header>
+
+    <main class="hero">
+        <h1>Gestiona tus Habitos</h1>
+        <p>Descubre el progreso de tus Habitos.</p>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+            <button class="filter-btn">&#9881;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function navigateTo(view) {
+            console.log('Navegando a:', view);
+            // Aquí puedes agregar lógica para cambiar de vista en React
+        }
+    </script>
+</body>
+</html>
