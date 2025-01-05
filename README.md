@@ -98,19 +98,6 @@ La navegación se maneja mediante estados locales en el componente principal (`A
    - Uso de **props** para pasar datos de padres a hijos.
    - Eventos para actualizar estados en el componente padre.
 
-## Instrucciones para la Entrega del Proyecto Final
-
-### Fecha de Entrega Obligatoria
-- 🗓 5 de enero de 2024 (hasta las 23:59 hrs).
-- 🗓 Fecha de Recuperatorio: 10 de enero de 2024 (hasta las 23:59 hrs).
-
-### Requisitos del Proyecto
-
-1. **Repositorio en GitHub:**
-   - Subir el proyecto en un repositorio público.
-   - Incluir el archivo `package.json` con las dependencias necesarias.
-   - Enviar el link del repositorio.
-
 2. **Despliegue en Vercel:**
    - Deployar la aplicación en Vercel y enviar el link.
 
